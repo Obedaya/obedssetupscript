@@ -1,0 +1,22 @@
+[global_config]
+[keybindings]
+[profiles]
+  [[default]]
+    font = Hack Nerd Font Mono 10
+    use_system_font = False
+    background_color = "#1c1c1c"
+    background_darkness = 0.95
+    title_inactive_bg_color = "#303030"
+    foreground_color = "#ffffff"
+    use_custom_command = True
+    custom_command = zsh
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
+
