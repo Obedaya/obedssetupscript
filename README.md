@@ -10,7 +10,7 @@ The script install:
 - [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
 - [powerlevel10k theme](https://github.com/romkatv/powerlevel10k)
 - [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
-- [Terminator](https://github.com/gnome-terminator/terminator) (Optional see [Options](###Options))
+- [Terminator](https://github.com/gnome-terminator/terminator) (Optional see [Options](#options))
 
 ## Installation
 
