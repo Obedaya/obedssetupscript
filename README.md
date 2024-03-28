@@ -5,7 +5,7 @@
 This README provides documentation for a setup script that installs zsh, ohmyzsh, a font, and terminator. The script automates the installation process for these tools, making it easier for developers to set up their development environment. The script is designed to work on Linux systems (apt and dnf).
 
 ## Tools
-The script install:
+The script installs:
 - zsh
 - [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
 - [powerlevel10k theme](https://github.com/romkatv/powerlevel10k)
