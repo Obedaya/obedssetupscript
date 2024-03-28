@@ -86,7 +86,6 @@ plugins=(
         ansible
         terraform
         helm
-        thefuck
         colorize
 )
 
@@ -114,11 +113,9 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-alias cat='ccat'
 alias ssha='eval ssh-agent; ssh-add'
 alias ls='ls -lah --color=auto'
 alias ll='ls -lah --color=auto'
-alias cat='ccat'
 alias less='cless'
 
 # Example aliases

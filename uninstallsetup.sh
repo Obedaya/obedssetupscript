@@ -7,6 +7,9 @@ if command -v apt &> /dev/null; then
 elif command -v dnf &> /dev/null; then
     PKG_MANAGER="dnf"
     REMOVE_CMD="sudo dnf remove -y"
+elif command -v pacman &> /dev/null; then
+    PKG_MANAGER="pacman"
+    REMOVE_CMD="sudo pacman -Rs"
 else
     echo "Unsupported package manager. Exiting."
     exit 1
