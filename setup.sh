@@ -19,6 +19,10 @@ elif command -v dnf &> /dev/null; then
     PKG_MANAGER="dnf"
     UPDATE_CMD="sudo dnf check-update"
     INSTALL_CMD="sudo dnf install -y"
+elif command -v pacman &> /dev/null; then
+    PKG_MANAGER="pacman"
+    UPDATE_CMD="sudo pacman -Sy"
+    INSTALL_CMD="sudo pacman -Sy"
 else
     echo "Unsupported package manager. Exiting."
     exit 1
@@ -34,23 +38,23 @@ wget -O "$FONT_DIR/HackNerdFontMono-Regular.ttf" "$FONT_URL"
 fc-cache -fv
 
 if $INSTALL_TERMINATOR; then
-	# 1. Install terminator
-	$INSTALL_CMD terminator
-	# Terminator Configuration
-	TERMINATOR_CONFIG_PATH="$HOME/.config/terminator/config"
+    # 1. Install terminator
+    $INSTALL_CMD terminator
+    # Terminator Configuration
+    TERMINATOR_CONFIG_PATH="$HOME/.config/terminator/config"
 
-	# Ensure the directory exists
-	mkdir -p "$(dirname "$TERMINATOR_CONFIG_PATH")"
+    # Ensure the directory exists
+    mkdir -p "$(dirname "$TERMINATOR_CONFIG_PATH")"
 
-	# Backup the current config (if it exists)
-	if [[ -f "$TERMINATOR_CONFIG_PATH" ]]; then
-    		cp "$TERMINATOR_CONFIG_PATH" "${TERMINATOR_CONFIG_PATH}.backup"
-	fi
+    # Backup the current config (if it exists)
+    if [[ -f "$TERMINATOR_CONFIG_PATH" ]]; then
+        cp "$TERMINATOR_CONFIG_PATH" "${TERMINATOR_CONFIG_PATH}.backup"
+    fi
 
-	# Copy the new configuration
-	cp "terminator_config" "$TERMINATOR_CONFIG_PATH"
+    # Copy the new configuration
+    cp "terminator_config" "$TERMINATOR_CONFIG_PATH"
 
-	echo "Terminator config updated. Please restart Terminator for changes to take effect."
+    echo "Terminator config updated. Please restart Terminator for changes to take effect."
 fi
 
 # 2. Install zsh
@@ -67,3 +71,4 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/g' ~/.zshrc
 
 cp zshrc_config ~/.zshrc
+
